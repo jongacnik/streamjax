@@ -1,0 +1,33 @@
+{
+  "name": "streamjax",
+  "version": "0.0.0",
+  "description": "streaming pjax???",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "browserify src/index.js -g uglifyify > test/bundle.js",
+    "watch": "watchify src/index.js -o test/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jongacnik/streamjax.git"
+  },
+  "keywords": [
+    "stream",
+    "pjax"
+  ],
+  "author": "Jon Gacnik <jon@folderstudio.com> (http://jongacnik.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jongacnik/streamjax/issues"
+  },
+  "homepage": "https://github.com/jongacnik/streamjax#readme",
+  "dependencies": {
+    "delegate": "^3.1.1",
+    "x": "^0.1.2"
+  },
+  "devDependencies": {
+    "browserify": "^14.0.0",
+    "uglifyify": "^3.0.4",
+    "watchify": "^3.9.0"
+  }
+}
