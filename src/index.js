@@ -54,6 +54,17 @@ function streamjax (opts) {
     })
   }
 
+  function getLocation (href) {
+    var l = document.createElement('a')
+    l.href = href
+    return l
+  }
+
+  function sameOrigin (href) {
+    var l = getLocation(href)
+    return l.hostname === window.location.hostname
+  }
+
   delegate(document.body, 'a', 'click', function (e) {
     if (
       e.which > 1
@@ -61,6 +72,7 @@ function streamjax (opts) {
       || e.ctrlKey
       || e.shiftKey
       || e.altKey
+      || !sameOrigin(e.target.href)
       || e.target.getAttribute('rel') === 'external'
       || e.target.href.indexOf('#') === 0
       || e.target.classList.contains('no-ajax')
