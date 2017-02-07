@@ -2,7 +2,7 @@
 
 *Very* experimental pjax implementation which streams content into container using an [`iframe` and `document.write`](https://jakearchibald.com/2016/fun-hacks-faster-content/)
 
-**Warning: maybe don't use this ☢️**
+**Warning: not actually on the npm registry ☢️**
 
 ## Example
 
