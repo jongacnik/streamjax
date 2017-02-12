@@ -11,6 +11,10 @@ var streamjax = require('streamjax')
 var sjax = streamjax({
   container: 'main'
 })
+
+sjax.on('load', function (e) {
+  console.log(e.url)
+})
 ```
 
 Now on any anchor click, `streamjax` will perform an XHR request and attempt to stream the contents of the request into the container element.

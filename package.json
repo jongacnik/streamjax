@@ -4,8 +4,8 @@
   "description": "streaming pjax???",
   "main": "src/index.js",
   "scripts": {
-    "build": "browserify src/index.js -g uglifyify > test/bundle.js",
-    "watch": "watchify src/index.js -o test/bundle.js"
+    "build": "browserify test/index.js -g uglifyify > test/bundle.js",
+    "watch": "watchify test/index.js -o test/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/jongacnik/streamjax#readme",
   "dependencies": {
     "delegate": "^3.1.1",
+    "tiny-emitter": "^1.1.0",
     "x": "^0.1.2"
   },
   "devDependencies": {

@@ -1,6 +1,7 @@
 var x = require('xtend')
 var delegate = require('delegate')
 var parseHTML = require('parseHTML')
+var emitter = require('tiny-emitter')
 
 module.exports = streamjax
 
@@ -15,6 +16,7 @@ function streamjax (opts) {
   }, opts)
 
   var container = document.querySelector(opts.container)
+  var events = new emitter()
 
   function stream (url) {
     var iframe = document.createElement('iframe')
@@ -45,6 +47,9 @@ function streamjax (opts) {
         iframe.contentDocument.write('</streaming-element-inner>')
         iframe.contentDocument.close()
         document.body.removeChild(iframe)
+        events.emit('load', {
+          url: url
+        })
       }
 
       xhr.responseType = 'text'
@@ -86,4 +91,8 @@ function streamjax (opts) {
   window.addEventListener('popstate', function () {
     stream(location.pathname)
   })
+
+  return {
+    on: function (ev, cb) { events.on(ev, cb); return this }
+  }
 }
