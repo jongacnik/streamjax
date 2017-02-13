@@ -31,6 +31,8 @@ function streamjax (opts) {
       iframe.src = ''
     })
 
+    events.emit('unload')
+
     container.innerHTML = ''
     iframeReady.then(function() {
       var xhr = new XMLHttpRequest()
