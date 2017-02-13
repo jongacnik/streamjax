@@ -17,7 +17,7 @@ sjax.on('unload', function () {
 })
 
 sjax.on('load', function (e) {
-  console.log('after content fully streamed', e.url)
+  console.log('after content fully streamed', e.url, e.location)
 })
 ```
 

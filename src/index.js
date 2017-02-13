@@ -50,7 +50,8 @@ function streamjax (opts) {
         iframe.contentDocument.close()
         document.body.removeChild(iframe)
         events.emit('load', {
-          url: url
+          url: url,
+          location: getLocation(url)
         })
       }
 
