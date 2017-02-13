@@ -12,8 +12,12 @@ var sjax = streamjax({
   container: 'main'
 })
 
+sjax.on('unload', function () {
+  console.log('before stream')
+})
+
 sjax.on('load', function (e) {
-  console.log(e.url)
+  console.log('after content fully streamed', e.url)
 })
 ```
 
