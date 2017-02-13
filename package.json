@@ -23,8 +23,9 @@
   "homepage": "https://github.com/jongacnik/streamjax#readme",
   "dependencies": {
     "delegate": "^3.1.1",
+    "parsehtml": "^1.0.0",
     "tiny-emitter": "^1.1.0",
-    "x": "^0.1.2"
+    "xtend": "^4.0.1"
   },
   "devDependencies": {
     "browserify": "^14.0.0",
